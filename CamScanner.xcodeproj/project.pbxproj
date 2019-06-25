@@ -15,6 +15,7 @@
 		CD56AB4722C1BC67002E5EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD56AB4522C1BC67002E5EBA /* LaunchScreen.storyboard */; };
 		CD56AB5222C1BC67002E5EBA /* CamScannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56AB5122C1BC67002E5EBA /* CamScannerTests.swift */; };
 		CD56AB5D22C1BC67002E5EBA /* CamScannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD56AB5C22C1BC67002E5EBA /* CamScannerUITests.swift */; };
+		CD8CD57222C21FAB00906C8D /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8CD57122C21FAB00906C8D /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CD56AB5822C1BC67002E5EBA /* CamScannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CamScannerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD56AB5C22C1BC67002E5EBA /* CamScannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamScannerUITests.swift; sourceTree = "<group>"; };
 		CD56AB5E22C1BC67002E5EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD8CD57122C21FAB00906C8D /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				CD56AB3922C1BC65002E5EBA /* AppDelegate.swift */,
 				CD56AB3B22C1BC65002E5EBA /* ViewController.swift */,
+				CD8CD57122C21FAB00906C8D /* PhotoViewController.swift */,
 				CD56AB3D22C1BC65002E5EBA /* Main.storyboard */,
 				CD56AB4322C1BC67002E5EBA /* Assets.xcassets */,
 				CD56AB4522C1BC67002E5EBA /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD56AB4222C1BC65002E5EBA /* CamScanner.xcdatamodeld in Sources */,
+				CD8CD57222C21FAB00906C8D /* PhotoViewController.swift in Sources */,
 				CD56AB3C22C1BC65002E5EBA /* ViewController.swift in Sources */,
 				CD56AB3A22C1BC65002E5EBA /* AppDelegate.swift in Sources */,
 			);
