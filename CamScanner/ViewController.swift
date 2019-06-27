@@ -26,8 +26,12 @@ class ViewController: UIViewController {
     func prepareCamera() {
         captureSession.sessionPreset = AVCaptureSession.Preset.photo
         
-        if let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices {
+        let availableDevices:[AVCaptureDevice] = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices
+        if availableDevices.count != 0  {
+
+   //     if let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back).devices  {
             captureDevice = availableDevices.first
+            beginSession()
         }
        
     }
@@ -41,15 +45,32 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        if let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+        let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        self.previewLayer = previewLayer
+        self.view.layer.addSublayer(self.previewLayer)
+        self.previewLayer.frame = self.view.layer.frame
+        captureSession.startRunning()
+        
+        let dataOutput = AVCaptureVideoDataOutput()
+        dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String):NSNumber(value: kCVPixelFormatType_32BGRA  )]
+        
+        if captureSession.canAddOutput(dataOutput) {
+             captureSession.addOutput(dataOutput)
+        }
+        
+        captureSession.commitConfiguration()
+        
+ /*       if let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+        if previewLayer != nil {
             self.previewLayer = previewLayer
             self.view.layer.addSublayer(self.previewLayer)
             self.previewLayer.frame = self.view.layer.frame
             captureSession.startRunning()
             
             let dataOutput = AVCaptureVideoDataOutput()
-//            dataOutput.videoSettings = [(kCPixelBufferPixelFormatTypeKey as NSString):NSNumber(kCPixelFormatType_32)]
+            dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString):NSNumber(value: kCVPixelFormatType_32BGRA  )]
         }
+ */
     }
 }
 
