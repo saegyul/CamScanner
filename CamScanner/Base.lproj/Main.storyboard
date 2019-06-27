@@ -21,7 +21,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="tBw-as-ege">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZjT-Rz-6c4"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ZjT-Rz-6c4">
+                            <connections>
+                                <action selector="takePhoto:" destination="BYZ-38-t0r" id="wY4-Vg-kay"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -31,7 +35,7 @@
         <!--Photo View Controller-->
         <scene sceneID="nCh-z7-ljD">
             <objects>
-                <viewController storyboardIdentifier="PhotoVC" id="arP-2z-auv" customClass="PhotoViewController" customModule="CamScanner" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="arP-2z-auv" customClass="PhotoViewController" customModule="CamScanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MEF-kP-KVs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
